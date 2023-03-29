@@ -1,0 +1,8 @@
+{
+    "canisters": {
+      "RosettaNet": {
+        "main": "main.mo",
+        "type": "motoko"
+      }
+    }
+}

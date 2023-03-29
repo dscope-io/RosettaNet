@@ -1,0 +1,34 @@
+- route:
+    id: route-7e05
+    from:
+      uri: file:data?noop=true
+      id: from-74c5
+      steps:
+        - unmarshal:
+            id: unmarshal-0df9
+            jaxb:
+              contextPath: 
+                '{{packages}}'
+              id: jaxb-e7e4
+        - to:
+            uri: ic:update
+            id: to-f09b
+            parameters:
+              canisterId: '{{ic.canister}}'
+              method: purchaseOrderRequest
+              url: '{{ic.location}}'
+              fetchRootKey: true
+              inType: jaxb
+              outType: jaxb
+              outClass: >-
+                io.dscope.rosettanet.interchange.purchaseorderrequest.v02_05.PurchaseOrderRequestType
+              loadIDL: false
+        - marshal:
+            id: marshal-0df9
+            jaxb:
+              contextPath: 
+                '{{packages}}'
+              id: jaxb-e7e5                
+        - log:
+            message: ${body}
+            id: log-1371
