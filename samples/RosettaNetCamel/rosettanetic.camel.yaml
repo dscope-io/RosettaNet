@@ -7,8 +7,7 @@
         - unmarshal:
             id: unmarshal-0df9
             jaxb:
-              contextPath: 
-                '{{packages}}'
+              contextPath: '{{packages}}'
               id: jaxb-e7e4
         - to:
             uri: ic:update
@@ -26,9 +25,8 @@
         - marshal:
             id: marshal-0df9
             jaxb:
-              contextPath: 
-                '{{packages}}'
-              id: jaxb-e7e5                
+              contextPath: '{{packages}}'
+              id: jaxb-e7e5
         - log:
             message: ${body}
             id: log-1371
